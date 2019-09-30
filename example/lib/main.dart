@@ -43,14 +43,19 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
-        ),
-      ),
-    );
+        home: new Scaffold(
+            body: new Center(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+
+                      RaisedButton(
+                          child: Text('AirplaneCheck'),
+                          onPressed: () => AirplaneModeDetection.launch()
+                      )
+                    ]
+                )
+            )
+        ));
   }
 }
