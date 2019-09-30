@@ -4,16 +4,17 @@ import 'package:flutter/services.dart';
 
 class AirplaneModeDetection {
   static const MethodChannel _channel =
-  const MethodChannel('flutter.moum.airplane_mode_detection');
+  const MethodChannel('airplane_mode_detection');
 
   static Future<String> get platformVersion async {
     final String version = await _channel.invokeMethod('getPlatformVersion');
     return version;
   }
 
-  static void launch() async {
+  static void launch({String android, String iOS}) async {
     await _channel.invokeMethod(
-        'detectairplane');
+        'detectairplane', {'and': android , 'ios': iOS});
     print("launch is success!");
+    print(iOS);
   }
 }

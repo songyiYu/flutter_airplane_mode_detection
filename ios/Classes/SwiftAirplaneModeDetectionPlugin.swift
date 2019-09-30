@@ -5,7 +5,7 @@ import Network
 @available(iOS 12.0, *)
 public class SwiftAirplaneModeDetectionPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "flutter.moum.airplane_mode_detection", binaryMessenger: registrar.messenger())
+    let channel = FlutterMethodChannel(name: "airplane_mode_detection", binaryMessenger: registrar.messenger())
     let instance = SwiftAirplaneModeDetectionPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
@@ -14,7 +14,15 @@ public class SwiftAirplaneModeDetectionPlugin: NSObject, FlutterPlugin {
    if (call.method == "getPlatformVersion"){
                 result("iOS" + UIDevice.current.systemVersion)
             }else if (call.method == "detectairplane") {
-                result(self.detectairplane())
+               guard let args = call.arguments else {
+                           return
+                       }
+                       if let myArgs = args as? [String: Any],
+                           let check = myArgs["ios"] as? String{
+                           if check == "iOSCheck"{
+                           result(self.detectairplane())
+                           }
+                       }
 
           }
         }
