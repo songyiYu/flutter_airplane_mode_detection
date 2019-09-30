@@ -50,8 +50,15 @@ class _MyAppState extends State<MyApp> {
                     children: [
 
                       RaisedButton(
-                          child: Text('AirplaneCheck'),
-                          onPressed: () => AirplaneModeDetection.launch()
+                          child: Text('Android AirplaneCheck'),
+                          onPressed: () => AirplaneModeDetection.launch(android: "androidCheck"),
+                        color: Colors.green,
+                      ),
+                      RaisedButton(
+                          child: Text('iOS AirplaneCheck'),
+                          onPressed: () => AirplaneModeDetection.launch(iOS: "iOSCheck"),
+                        color: Colors.blueGrey,
+
                       )
                     ]
                 )
