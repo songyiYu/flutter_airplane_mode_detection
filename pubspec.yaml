@@ -1,8 +1,8 @@
 name: airplane_mode_detection
 description: A new flutter plugin project.
 version: 0.0.1
-author:
-homepage:
+author: chokyungjin<chokj1472@gmail.com>, moonyoungCHAE<Xpf_fl@naver.com>, FlutterMoum Group<fluttermoum@gmail.com>
+homepage: https://github.com/flutter-moum/flutter_airplane_mode_detection
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

@@ -15,6 +15,7 @@ class AirplaneModeDetection {
     await _channel.invokeMethod(
         'detectairplane', {'and': android , 'ios': iOS});
     print("launch is success!");
+    print(android);
     print(iOS);
   }
 }
