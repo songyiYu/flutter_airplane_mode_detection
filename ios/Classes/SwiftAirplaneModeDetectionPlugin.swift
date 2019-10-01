@@ -20,6 +20,7 @@ public class SwiftAirplaneModeDetectionPlugin: NSObject, FlutterPlugin {
                        if let myArgs = args as? [String: Any],
                            let check = myArgs["ios"] as? String{
                            if check == "iOSCheck"{
+                           print("111")
                            result(self.detectairplane())
                            }
                        }
